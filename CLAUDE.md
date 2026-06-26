@@ -9,9 +9,9 @@ the clinic's established brand voice on request.
 CLAUDE.md                      ← you are here (instructions for the AI)
 START-HERE.md                  ← plain-language guide for non-technical operators
 SCHEDULE.md                    ← master content calendar (GENERATED — do not hand-edit)
-posts/                         ← one .md per post (frontmatter + text) = source of truth
-├── YYYY-MM-DD_NNN.md           ← past published Facebook posts (306)
-└── Trello_<date|TBD>_<id>.md   ← future posts / topics imported from Trello
+posts/                         ← one .md per post; filename = <date|TBD>_<ID>_<name>.md
+├── 2026-06-18_430_porodite-kucheta-bigal.md   ← example (dated)
+└── TBD_440_top-10-kucheshki-imena.md          ← example (undated backlog)
 images/                        ← post images; named after post ID (439.jpg, 438_1.jpg…); auto-linked in SCHEDULE
 guides/
 ├── writing-style.md           ← Bulgarian style guide (voice, structure, hashtags)
@@ -57,6 +57,9 @@ Status lives in each post file's frontmatter; `published` is inferred from the d
 - **Draft a post:** `/post <#ID | title | filename>` — writes brand-voice text into the post file.
 - **Plan a month:** `/plan-month <YYYY-MM>` — assigns backlog topics to Wed/Sat slots.
 - **Refresh calendar:** `/schedule` (or `python3 tools/update-schedule.py`).
+- **Filenames** follow `<date|TBD>_<ID>_<name>.md` and are derived from each post's frontmatter
+  (date, title). After assigning/changing a date or title, run `python3 tools/rename-posts.py`
+  to refresh filenames (it's idempotent), then `tools/update-schedule.py`.
 - **Publishing:** posts are pasted/scheduled manually in **Meta Business Suite** (see `guides/publishing-to-facebook.md`). Claude does not auto-publish.
 
 ## Rules

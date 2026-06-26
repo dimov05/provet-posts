@@ -31,9 +31,9 @@ Follow these steps exactly:
 6. **Save it.** Write the final text back into the SAME source file, replacing the raw brief but KEEPING
    and updating the frontmatter:
    - If it was a Trello topic, keep `trello_title`, keep/keep-as-is the `date`/`time`, set `status: drafted`.
-   - Do not change the filename.
 
-7. **Refresh the schedule.** Run `python3 tools/update-schedule.py`.
+7. **Refresh filenames + schedule.** Run `python3 tools/rename-posts.py` (updates the filename from the
+   frontmatter, e.g. if a date was set), then `python3 tools/update-schedule.py`.
 
 8. **Report.** Show the finished post text in a code block so it's easy to copy into Meta Business Suite.
    Then check `images/` for a file matching this post's ID (e.g. `439*.jpg`): if none

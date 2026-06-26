@@ -71,6 +71,12 @@ def extract_id(title):
     return f"#{m.group(1)}" if m else ""
 
 
+def id_from_filename(fname):
+    # filenames look like <date|TBD>_<ID>_<slug>.md
+    m = re.match(r"(?:\d{4}-\d{2}-\d{2}|TBD)_([^_]+)_", fname)
+    return f"#{m.group(1)}" if m else ""
+
+
 def list_images():
     if not os.path.isdir(IMAGES_DIR):
         return []
@@ -114,7 +120,7 @@ def main():
         title = fm.get("trello_title", "")
         date = fm.get("date", "TBD")
         time = fm.get("time", "")
-        is_trello = fname.startswith("Trello")
+        is_trello = "trello_title" in fm        # past FB posts have no trello_title
         has_text = len(body.strip()) > 40
 
         # --- Status model (date-driven) ---
@@ -134,7 +140,7 @@ def main():
         else:                                           # future-dated OR undated backlog
             status = "drafted" if has_text else "topic"
 
-        post_id = extract_id(title)
+        post_id = extract_id(title) or id_from_filename(fname)
         rows.append({
             "date": date,
             "time": time[:5] if time and time != "TBD" else "",

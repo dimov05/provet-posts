@@ -136,6 +136,8 @@ for both locations."* (Тракия and Кършияка have **different** hour
 - **Two locations, different hours:** Тракия (Mon–Sun 08:00–22:00) and Кършияка (Mon–Fri 10:00–19:00).
 - **If Claude states a medical fact you're unsure about**, double-check with the vets before posting.
 - **Images** are stored in the repo — see the dedicated section below.
+- **Post file names** tell you what each post is: `<date-or-TBD>_<ID>_<short-name>.md`
+  (e.g. `2026-06-18_430_porodite-kucheta-bigal.md`). Undated ideas start with `TBD_`.
 - **Never worry about breaking the schedule table** — it's rebuilt automatically from the posts.
 
 ---

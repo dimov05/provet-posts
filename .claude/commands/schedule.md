@@ -3,8 +3,8 @@ description: Rebuild SCHEDULE.md from the post files, then show what's upcoming
 argument-hint: (optional) a month or filter to summarize
 ---
 
-Run `python3 tools/update-schedule.py` to rebuild `SCHEDULE.md`
-from the current state of `posts/`.
+Run `python3 tools/rename-posts.py` (normalizes filenames from frontmatter), then
+`python3 tools/update-schedule.py` to rebuild `SCHEDULE.md` from the current state of `posts/`.
 
 Then:
 - If `$ARGUMENTS` is empty: summarize the next ~8 upcoming posts and how many backlog topics still need a date or text.

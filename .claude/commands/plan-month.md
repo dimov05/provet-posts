@@ -18,7 +18,8 @@ Steps:
    (e.g. heat-stroke in summer, fireworks before New Year).
 4. For each assigned topic, update its file in `posts/`: set `date:` and `time: 19:00` in the
    frontmatter (keep `status` as is — text may still need writing via `/post`).
-5. Run `python3 tools/update-schedule.py`.
+5. Run `python3 tools/rename-posts.py` (refreshes filenames now that dates are set), then
+   `python3 tools/update-schedule.py`.
 6. Report the proposed month as a table (Date · Day · ID · Title · Series) and note which slots are still
    empty or which topics still need text drafted with `/post`.
 
