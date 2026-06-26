@@ -1,7 +1,7 @@
 ---
 status: drafted
 date: 2026-07-29
-time: 19:00
+time: 18:30
 trello_title: "#446 Породите кучета: Немска овчарка"
 ---
 
