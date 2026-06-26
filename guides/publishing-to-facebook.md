@@ -17,14 +17,16 @@ The repo writes and schedules the **text**; Facebook publishing is done through 
 - The hashtag block is already at the bottom of each drafted post — paste as-is.
 - Keep the first 1–2 lines strong; Facebook truncates with "See more" after a few lines.
 
-## Optional later phase — Graph API auto-publish (NOT built yet)
-If you later want hands-off publishing straight from the repo, the path is:
-- Create a Meta **Developer app**, add the **Pages** product, get a **long-lived Page access token**
-  (with `pages_manage_posts`, `pages_read_engagement`).
-- Script (Python) calling `POST /{page-id}/photos` (with `published=false` to stage, or `scheduled_publish_time`
-  for scheduling) or `/{page-id}/feed` for text-only.
-- Run it locally or on a **GitHub Actions** cron (free) reading `SCHEDULE.md`.
+## Graph API auto-publish (BUILT — opt-in)
+Hands-off scheduling straight from the repo is now available via the Graph API + GitHub Actions:
+- Mark a post `status: ready` (with a real date), commit & push to `master`.
+- `tools/publish.py` runs on GitHub Actions, schedules it on the Page for its Europe/Sofia time,
+  then writes `status: scheduled` + `fb_post_id` back to the post file (never double-posts).
+- Images are matched by post ID just like `SCHEDULE.md`; this public repo sends them by raw URL.
 
-**Trade-offs to know before enabling:** tokens expire (~60 days, need refreshing); images must be uploaded
-or hosted at a public URL; Meta app/permission setup has friction. Manual Meta Business Suite is recommended
-until the content workflow is proven. Ask Claude to scaffold this when you're ready.
+**One-time setup (owner):** follow [`facebook-api-setup.md`](facebook-api-setup.md) to create a Meta
+app, get a Page token, and add the `FB_PAGE_TOKEN` / `FB_PAGE_ID` GitHub secrets. Test with the
+workflow's **dry_run** button first.
+
+**Good to know:** tokens can expire (use a System User token so it doesn't); the Graph schedule
+window is 10 min–75 days ahead. Manual Meta Business Suite above remains a fine fallback.

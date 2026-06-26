@@ -17,14 +17,17 @@ guides/
 ├── writing-style.md           ← Bulgarian style guide (voice, structure, hashtags)
 ├── clinic-info.md             ← exact hours/phones/addresses — the ONLY source for clinic facts
 ├── post-types.md              ← skeletons per recurring series
-├── publishing-to-facebook.md  ← how posts reach Facebook (Meta Business Suite)
+├── publishing-to-facebook.md  ← how posts reach Facebook (Meta Business Suite + auto-publish)
+├── facebook-api-setup.md      ← one-time Meta app/token + GitHub secrets setup (owner)
 ├── using-from-your-phone.md   ← using this from a phone
 └── image-style.md             ← visual style analysis + image briefs (later phase)
 tools/
 ├── update-schedule.py         ← rebuilds SCHEDULE.md from posts/
+├── publish.py                 ← schedules `ready`+dated posts to Facebook via Graph API
 ├── import-facebook-posts.py   ← one-time importer (Facebook export)
 ├── import-trello-cards.py     ← one-time importer (Trello export)
 └── facebook-backup/           ← raw FB export + media (read-only reference)
+.github/workflows/publish.yml  ← runs tools/publish.py (push to master / manual / hourly cron)
 .claude/commands/              ← slash commands: /post, /plan-month, /schedule
 ```
 
@@ -60,7 +63,10 @@ Status lives in each post file's frontmatter; `published` is inferred from the d
 - **Filenames** follow `<date|TBD>_<ID>_<name>.md` and are derived from each post's frontmatter
   (date, title). After assigning/changing a date or title, run `python3 tools/rename-posts.py`
   to refresh filenames (it's idempotent), then `tools/update-schedule.py`.
-- **Publishing:** posts are pasted/scheduled manually in **Meta Business Suite** (see `guides/publishing-to-facebook.md`). Claude does not auto-publish.
+- **Publishing:** two paths. (1) Auto: mark a post `status: ready` + dated and push to `master`;
+  `tools/publish.py` (GitHub Actions) schedules it via the Graph API and sets `status: scheduled` +
+  `fb_post_id`. Setup in `guides/facebook-api-setup.md`. (2) Manual fallback: paste/schedule in
+  **Meta Business Suite** (`guides/publishing-to-facebook.md`). Claude itself never calls Facebook.
 
 ## Rules
 - Never hand-edit `SCHEDULE.md` — edit the post files, then regenerate.

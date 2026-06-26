@@ -1,0 +1,71 @@
+name: Publish ready posts to Facebook
+
+# Schedules posts that are marked `status: ready` (and dated) onto the Provet
+# Facebook Page via the Graph API. See guides/facebook-api-setup.md for setup.
+#
+# Triggers:
+#   - push to master touching posts/**  (marking a post ready = a commit = a run)
+#   - manual "Run workflow" button, with a dry_run toggle (defaults to true/safe)
+#   - hourly cron as a safety net (catches anything a push missed)
+
+on:
+  push:
+    branches: [master]
+    paths: ['posts/**']
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry run (list posts, no API calls, no writes)"
+        type: boolean
+        default: true
+  schedule:
+    - cron: '0 * * * *'   # top of every hour (UTC)
+
+# Avoid overlapping runs racing on the same posts / push-back commit.
+concurrency:
+  group: fb-publish
+  cancel-in-progress: false
+
+permissions:
+  contents: write          # needed to push status: scheduled back to the repo
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Publish
+        env:
+          FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+          # Public repo → send images by raw URL (no byte upload needed).
+          REPO_RAW_BASE: https://raw.githubusercontent.com/${{ github.repository }}/${{ github.ref_name }}
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.dry_run }}" = "true" ]; then
+            python tools/publish.py --dry-run
+          else
+            python tools/publish.py
+          fi
+
+      - name: Commit status changes
+        if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.dry_run == true) }}
+        run: |
+          if [ -n "$(git status --porcelain posts/)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add posts/
+            git commit -m "Mark scheduled posts (fb_post_id) [skip ci]"
+            git push
+          else
+            echo "No frontmatter changes to commit."
+          fi
