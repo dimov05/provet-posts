@@ -4,9 +4,9 @@ import datetime
 
 # --- CONFIGURATION ---
 # Path to the extracted Facebook "your_posts_1.json" file
-FB_JSON_PATH = "./your_facebook_data/your_posts_1.json" 
+FB_JSON_PATH = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "tools/facebook-backup/your_posts_1.json") 
 # Directory where you want your clean markdown files saved
-OUTPUT_DIR = "./posts-archive"
+OUTPUT_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "posts")
 # ---------------------
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)

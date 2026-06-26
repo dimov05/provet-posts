@@ -11,14 +11,14 @@ every 2 weeks. Holiday/`hours-holiday` posts must land on the correct real dates
 
 Steps:
 
-1. Read `fb-content-vault/SCHEDULE.md` — note the **Backlog** items and any already-dated
+1. Read `SCHEDULE.md` — note the **Backlog** items and any already-dated
    posts in the target month (don't double-book those slots).
 2. Determine the target month's Wednesdays and Saturdays. Build the slot list at 19:00.
 3. Assign backlog topics to open slots, balancing series variety. Prefer seasonally-relevant topics
    (e.g. heat-stroke in summer, fireworks before New Year).
-4. For each assigned topic, update its file in `posts-archive/`: set `date:` and `time: 19:00` in the
+4. For each assigned topic, update its file in `posts/`: set `date:` and `time: 19:00` in the
    frontmatter (keep `status` as is — text may still need writing via `/post`).
-5. Run `python3 fb-content-vault/generate_schedule.py`.
+5. Run `python3 tools/update-schedule.py`.
 6. Report the proposed month as a table (Date · Day · ID · Title · Series) and note which slots are still
    empty or which topics still need text drafted with `/post`.
 

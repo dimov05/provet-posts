@@ -42,7 +42,7 @@ Distilled from 306 real published posts. Follow this when writing any new post.
 - ✅ Завършвай с конкретен въпрос, който кани на коментар.
 - ✅ Свързвай темата с реалната грижа за любимеца и услугите на клиниката, естествено.
 - ✅ Точни факти за хора/породи/болести; при медицински твърдения — предпазливо и насочващо към преглед.
-- ❌ Без неформално „ти". Без емоджи-спам. Без измислени данни за клиниката (виж [CLINIC-INFO.md](CLINIC-INFO.md)).
+- ❌ Без неформално „ти". Без емоджи-спам. Без измислени данни за клиниката (виж [clinic-info.md](clinic-info.md)).
 - ❌ Без обещания за лечение/гаранции; винаги насочвай към консултация при притеснение.
 
-See [docs/series-templates.md](docs/series-templates.md) for per-series skeletons.
+See [post-types.md](post-types.md) for per-series skeletons.

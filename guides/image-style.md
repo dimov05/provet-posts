@@ -24,7 +24,7 @@ captures the visual identity so any future image (made in Canva, AI, or by hand)
   (Тракия 08:00–22:00 · Кършияка 10:00–19:00). Logo small in opposite corner.
 
 > Series mapping: educational/`did-you-know`/breed posts → Template A; `service`/`hours-holiday`/
-> seasonal → Template B. Keep the location/hours overlays accurate per [CLINIC-INFO.md](../CLINIC-INFO.md).
+> seasonal → Template B. Keep the location/hours overlays accurate per [clinic-info.md](clinic-info.md).
 
 ## Reusable image brief (fill per post)
 ```

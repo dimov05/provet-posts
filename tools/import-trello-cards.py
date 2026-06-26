@@ -2,8 +2,8 @@ import json
 import os
 
 # --- КОНФИГУРАЦИЯ ---
-TRELLO_JSON_PATH = "trello_export.json"
-OUTPUT_DIR = "posts-archive"
+TRELLO_JSON_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "trello_export.json")
+OUTPUT_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "posts")
 # --------------------
 
 def parse_trello():

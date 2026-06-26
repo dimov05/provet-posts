@@ -5,7 +5,7 @@ The repo writes and schedules the **text**; Facebook publishing is done through 
 
 ## The workflow (default)
 1. Draft posts for the period with `/post <#ID>` (and `/plan-month` to date them).
-   Each finished post lives in `posts-archive/<file>.md` with `status: drafted`.
+   Each finished post lives in `posts/<file>.md` with `status: drafted`.
 2. Open **Meta Business Suite** → **Planner** (business.facebook.com or the *Meta Business Suite* phone app).
 3. For each post: **Create post** → paste the text from the file → attach the image →
    **Schedule** for the date/time in `SCHEDULE.md` (your Wed/Sat 19:00 slots).

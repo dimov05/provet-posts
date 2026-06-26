@@ -28,4 +28,4 @@ Open the post in `SCHEDULE.md`, note its ID, find the matching image here, **dow
 it in **Meta Business Suite** when you schedule the post.
 
 > Keep images reasonably sized (Facebook works great at **1080×1080**). See
-> [../docs/image-style.md](../docs/image-style.md) for the clinic's visual style.
+> [../guides/image-style.md](../guides/image-style.md) for the clinic's visual style.

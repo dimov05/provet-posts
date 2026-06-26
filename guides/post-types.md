@@ -1,7 +1,7 @@
 # 🧩 Series Templates
 
 Reusable skeletons for the recurring post types. Each is a starting structure —
-fill with real content, keep the [BRAND-VOICE.md](../BRAND-VOICE.md) tone, and end with the
+fill with real content, keep the [writing-style.md](writing-style.md) tone, and end with the
 canonical hashtag block. Series labels match the `Series` column in `SCHEDULE.md`.
 
 ---
@@ -24,7 +24,7 @@ canonical hashtag block. Series labels match the `Series` column in `SCHEDULE.md
 ## `contact` — Пост с номерата
 > Hook: топло изречение за мисията/грижата (напр. „Здравето на домашните любимци е наша мисия! ❤️").
 - Кратък абзац какво предлагаме (профилактика, спешна помощ, диагностика — скенер/рентген/ехограф).
-- **Контактна карта** — копирай дословно блока от [CLINIC-INFO.md](../CLINIC-INFO.md) (двете локации с РАЗЛИЧНИТЕ часове!).
+- **Контактна карта** — копирай дословно блока от [clinic-info.md](clinic-info.md) (двете локации с РАЗЛИЧНИТЕ часове!).
 - Хаштаг блок.
 
 ## `myths` — Митове и легенди за домашните любимци (Част N)
@@ -38,7 +38,7 @@ canonical hashtag block. Series labels match the `Series` column in `SCHEDULE.md
 - Подкана: „Името/породата на Вашия любимец в списъка ли е? Споделете! 👇🏼".
 
 ## `hours-holiday` — Празнично / работно време
-> ⚠️ Винаги ползвай точните часове от [CLINIC-INFO.md](../CLINIC-INFO.md). Празничните дни се изброяват по дата за **всяка локация поотделно**.
+> ⚠️ Винаги ползвай точните часове от [clinic-info.md](clinic-info.md). Празничните дни се изброяват по дата за **всяка локация поотделно**.
 - Hook: `ПРАЗНИЧНО РАБОТНО ВРЕМЕ 🎅🏼` / „Скъпи приятели, …".
 - 📍 **Провет Тракия** — списък дата → часове.
 - 📍 **Провет Кършияка** — списък дата → часове.

@@ -29,7 +29,7 @@ You will use **3 free apps**. Install them once:
 
 ## 2. Understanding the schedule
 
-Open the file **`fb-content-vault/SCHEDULE.md`** on GitHub. It's a table of every post.
+Open the file **`SCHEDULE.md`** on GitHub. It's a table of every post.
 
 **Columns:** Date · Time · ID (like `#440`) · Title · Series (the type of post) · Status · File.
 
@@ -53,14 +53,14 @@ Open the file **`fb-content-vault/SCHEDULE.md`** on GitHub. It's a table of ever
 ## 3. 📱 Doing it from your PHONE
 
 ### A) See what's coming up
-1. Open the **GitHub app** → your repository → `fb-content-vault` → `SCHEDULE.md`.
+1. Open the **GitHub app** → your repository → `SCHEDULE.md`.
 2. Look at the **Upcoming** and **Backlog** sections.
 
 ### B) Ask Claude to write a post
 1. Open the **Claude app**.
 2. Say, in plain words, for example:
-   > "Write Facebook post **#440 — ТОП 10 кучешки имена** for Provet. Follow `BRAND-VOICE.md`
-   > and the matching template in `series-templates.md` from the repo."
+   > "Write Facebook post **#440 — ТОП 10 кучешки имена** for Provet. Follow `guides/writing-style.md`
+   > and the matching template in `guides/post-types.md` from the repo."
 3. Claude writes the full Bulgarian post, ending with the hashtags.
 
 ### C) Review and adjust
@@ -80,7 +80,7 @@ That's the whole loop — no laptop required.
 ## 4. 💻 Doing it from your COMPUTER (no VS Code)
 
 Exactly the same as the phone, just on bigger screens in your browser:
-- **github.com** → open `fb-content-vault/SCHEDULE.md` to see the plan.
+- **github.com** → open `SCHEDULE.md` to see the plan.
 - **claude.ai** → ask Claude to write/review (same wording as above).
 - **business.facebook.com** → Planner → paste + schedule.
 
@@ -124,14 +124,14 @@ mix up the topic types, and put a contact post roughly every two weeks."*
 → In `SCHEDULE.md`, look for 💡 `topic` and ✍️ `drafted` rows.
 
 **"I want a holiday working-hours post"**
-→ Ask Claude: *"Write a holiday hours post for [holiday] — use the exact hours from `CLINIC-INFO.md`
+→ Ask Claude: *"Write a holiday hours post for [holiday] — use the exact hours from `guides/clinic-info.md`
 for both locations."* (Тракия and Кършияка have **different** hours — Claude handles this.)
 
 ---
 
 ## 7. ❓ Good to know
 
-- **Clinic facts** (phones, addresses, working hours) come only from `CLINIC-INFO.md`. If hours ever
+- **Clinic facts** (phones, addresses, working hours) come only from `guides/clinic-info.md`. If hours ever
   change, tell whoever maintains the repo to update that one file — every future post will then be correct.
 - **Two locations, different hours:** Тракия (Mon–Sun 08:00–22:00) and Кършияка (Mon–Fri 10:00–19:00).
 - **If Claude states a medical fact you're unsure about**, double-check with the vets before posting.
@@ -142,7 +142,7 @@ for both locations."* (Тракия and Кършияка have **different** hour
 
 ## 8. 📷 Images for posts
 
-Images live in the **`fb-content-vault/images/`** folder, so you can add and grab them from your phone
+Images live in the **`images/`** folder, so you can add and grab them from your phone
 or computer. The trick: **name each image after the post's ID number** and the schedule links it
 automatically (you'll see a 📷 in the **Img** column).
 
@@ -167,7 +167,7 @@ automatically (you'll see a 📷 in the **Img** column).
 3. In **Meta Business Suite**, attach the downloaded image to the post when you schedule it.
 
 > Posts in the schedule showing **`—`** in the Img column still need a picture.
-> Recommended size: **1080×1080**. Style notes: `docs/image-style.md`.
+> Recommended size: **1080×1080**. Style notes: `guides/image-style.md`.
 
 ---
 
