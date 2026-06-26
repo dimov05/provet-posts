@@ -159,7 +159,12 @@ def main():
     rows.sort(key=sortkey)
 
     published = [r for r in rows if r["status"] == "published"]
-    backlog = [r for r in rows if not re.match(r"\d{4}-\d{2}-\d{2}", r["date"])]
+    def id_num(r):
+        n = r["id"].lstrip("#")
+        return int(n) if n.isdigit() else float("inf")
+
+    backlog = sorted([r for r in rows if not re.match(r"\d{4}-\d{2}-\d{2}", r["date"])],
+                     key=id_num)
     upcoming = [r for r in rows if r["status"] != "published"
                 and re.match(r"\d{4}-\d{2}-\d{2}", r["date"])]
 
