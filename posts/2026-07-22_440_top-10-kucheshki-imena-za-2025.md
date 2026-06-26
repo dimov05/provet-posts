@@ -1,7 +1,7 @@
 ---
 status: planned
-date: TBD
-time: TBD
+date: 2026-07-22
+time: 19:00
 trello_title: "#440 ТОП 10 кучешки имена за 2025"
 ---
 

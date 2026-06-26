@@ -1,7 +1,7 @@
 ---
 status: planned
-date: TBD
-time: TBD
+date: 2026-07-08
+time: 19:00
 trello_title: "#436 Грижи за кучето докато сте на море"
 ---
 

@@ -1,7 +1,7 @@
 ---
 status: planned
-date: TBD
-time: TBD
+date: 2026-07-15
+time: 19:00
 trello_title: "#444 Какво да направите ако кучето ви бъде ужилено от пчела?"
 ---
 

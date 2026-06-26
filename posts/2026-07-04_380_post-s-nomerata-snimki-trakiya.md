@@ -1,7 +1,7 @@
 ---
 status: planned
-date: TBD
-time: TBD
+date: 2026-07-04
+time: 19:00
 trello_title: "#380 Пост с номерата (снимки Тракия)"
 ---
 

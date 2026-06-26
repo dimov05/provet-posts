@@ -1,7 +1,7 @@
 ---
 status: drafted
-date: TBD
-time: TBD
+date: 2026-07-01
+time: 19:00
 trello_title: "#439 Как да предпазите кучето си от топлинен удар?"
 ---
 

@@ -1,7 +1,7 @@
 ---
 status: planned
-date: TBD
-time: TBD
+date: 2026-07-29
+time: 19:00
 trello_title: "#371 Породите кучета: Басенджи"
 ---
 

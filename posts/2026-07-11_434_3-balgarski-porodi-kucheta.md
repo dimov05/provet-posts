@@ -1,7 +1,7 @@
 ---
 status: planned
-date: TBD
-time: TBD
+date: 2026-07-11
+time: 19:00
 trello_title: "#434 3 български породи кучета"
 ---
 
