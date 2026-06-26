@@ -47,13 +47,17 @@ def slugify(text, maxlen=45):
 
 
 def post_id(title, fname):
-    m = re.search(r"#\s?(\d+(?:\.\d+)?)", title or "")
+    m = re.search(r"#\s?(\d+(?:\.\d+)?)", title or "")    # Trello #NNN — authoritative
     if m:
         return m.group(1).replace(".", "-")
-    m = re.match(r"\d{4}-\d{2}-\d{2}_(\w+)", fname)        # past FB: 2026-06-07_032.md
+    # already in canonical form <date|TBD>_<ID>_<slug>.md → reuse the ID (idempotent)
+    m = re.match(r"(?:\d{4}-\d{2}-\d{2}|TBD)_([^_]+)_", fname)
     if m:
         return m.group(1)
-    m = re.match(r"Trello_(?:[\d-]+|TBD)_(\w+)", fname)    # bonus Trello card (no number)
+    m = re.match(r"\d{4}-\d{2}-\d{2}_(\d+)\.md$", fname)   # original FB: 2026-06-07_032.md
+    if m:
+        return m.group(1)
+    m = re.match(r"Trello_(?:[\d-]+|TBD)_(\w+)\.md$", fname)  # original bonus Trello (no number)
     if m:
         return m.group(1)
     return "na"
